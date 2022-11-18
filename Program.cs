@@ -1,34 +1,49 @@
-﻿Start();
+﻿// Start();
 
-void Start()
-{
-    while(true)
-    {
-        Console.ReadLine();
-        Console.Clear();
+// void Start()
+// {
+//     while(true)
+//     {
+//         Console.ReadLine();
+//         Console.Clear();
 
-        System.Console.WriteLine("Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.");
-        System.Console.WriteLine("Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.");
-        System.Console.WriteLine("Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.");
-        System.Console.WriteLine("Enter 0 to end");
+//         System.Console.WriteLine("Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.");
+//         System.Console.WriteLine("Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.");
+//         System.Console.WriteLine("Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.");
+//         System.Console.WriteLine("Enter 0 to end");
 
-        int NumTask = int.Parse(Console.ReadLine());
-        switch (NumTask)
-        {
-            case 0: return; break;
-            case 64: ; break;
-            case 66: ; break;
-            case 68: ; break;
-            default: System.Console.WriteLine("Enter number of task or 0"); break; 
-        }
-    }
-}
+//         int NumTask = int.Parse(Console.ReadLine());
+//         switch (NumTask)
+//         {
+//             case 0: return; break;
+//             case 64: ; break;
+//             case 66: ; break;
+//             case 68: ; break;
+//             default: System.Console.WriteLine("Enter number of task or 0"); break; 
+//         }
+//     }
+// }
 
 // Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+IntFromOneToN();
+void IntFromOneToN()
+{
+    int n = SetNumber("Enter number N ");
+    Func(n,1);
+}
 
 
+void Func(int i, int n)
+{
+    Console.Write(i-- + ", ");
+    if (i > n)
+        Func(i, n);
+    else
+        Console.Write(1);
+
+}
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
